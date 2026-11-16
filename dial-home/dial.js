@@ -8,10 +8,29 @@
 (function () {
   'use strict';
   var APPS = [
-    ['카메라', '📷', '#f59e0b'], ['메시지', '💬', '#22c55e'], ['음악', '♫', '#ec4899'], ['지도', '🗺', '#6366f1'],
-    ['전화', '☎', '#0ea5e9'], ['캘린더', '📅', '#a855f7'], ['동영상', '▶', '#ef4444'], ['설정', '⚙', '#64748b']
+    ['카메라', '', '#c92a3e'], ['메시지', '', '#1f63e0'], ['음악', '', '#e23a64'], ['지도', '', '#2f8f5b'],
+    ['전화', '', '#18a54a'], ['캘린더', '', '#dc3b3b'], ['동영상', '', '#c4120a'], ['설정', '', '#56607a']
   ];
   var REDUCE = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 실제 휴대폰 기본 앱처럼 그린 아이콘(48×48, 둥근 사각형)
+  var gid = 0;
+  var SQ = 'M24 2C8 2 2 8 2 24s6 22 22 22 22-6 22-22S40 2 24 2z';
+  function bg(c1, c2) { var id = 'g' + (++gid); return '<defs><linearGradient id="' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + c1 + '"/><stop offset="1" stop-color="' + c2 + '"/></linearGradient></defs><path d="' + SQ + '" fill="url(#' + id + ')"/>'; }
+  var GEAR = 'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z';
+  var PHONE = 'M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z';
+  var DRAW = {
+    '카메라': function () { return bg('#ff6b6b', '#e0344a') + '<path d="M17 14.5h14l2 3.5h3.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3h-25a3 3 0 0 1-3-3V21a3 3 0 0 1 3-3H15z" fill="#fff"/><circle cx="24" cy="27" r="7.2" fill="#e0344a"/><circle cx="24" cy="27" r="4.4" fill="#3b0d15"/><circle cx="22.4" cy="25.4" r="1.4" fill="#fff" opacity=".8"/><circle cx="34.5" cy="21.8" r="1.3" fill="#e0344a"/>'; },
+    '메시지': function () { return bg('#4c9bff', '#1f63e0') + '<path d="M24 11c-8.8 0-15 5.6-15 12.4 0 3.8 2 7.2 5.1 9.4L13 38.5l6.3-3.4c1.5.4 3.1.6 4.7.6 8.8 0 15-5.6 15-12.3S32.8 11 24 11z" fill="#fff"/><circle cx="18" cy="23.4" r="1.9" fill="#1f63e0"/><circle cx="24" cy="23.4" r="1.9" fill="#1f63e0"/><circle cx="30" cy="23.4" r="1.9" fill="#1f63e0"/>'; },
+    '음악': function () { return bg('#ff8f3f', '#f2416e') + '<path d="M20 15.5l14-3.2v17.4" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/><path d="M20 15.5v17" stroke="#fff" stroke-width="3.2"/><ellipse cx="16.5" cy="33" rx="4.6" ry="3.8" fill="#fff"/><ellipse cx="30.5" cy="30" rx="4.6" ry="3.8" fill="#fff"/>'; },
+    '지도': function () { return bg('#ffffff', '#eef2f5') + '<path d="M2 30 L30 2 H40 L2 40z" fill="#c9e7cf"/><path d="M46 20 L20 46 H32 L46 32z" fill="#bfe0f7"/><path d="M8 46 L46 8" stroke="#ffcf3f" stroke-width="7"/><path d="M2 14 L34 46" stroke="#fff" stroke-width="4"/><path d="M28 9a8 8 0 0 0-8 8c0 6 8 14 8 14s8-8 8-14a8 8 0 0 0-8-8z" fill="#ea4335"/><circle cx="28" cy="17" r="3" fill="#8c1d18"/>'; },
+    '전화': function () { return bg('#3ddc6e', '#18a54a') + '<g transform="translate(10.5 10.5) scale(1.12)"><path d="' + PHONE + '" fill="#fff"/></g>'; },
+    '캘린더': function () { var d = new Date(); return '<path d="' + SQ + '" fill="#fff"/><path d="M24 2C11 2 4.2 6 2.6 15h42.8C43.8 6 37 2 24 2z" fill="#ef4444"/><text x="24" y="11.6" text-anchor="middle" font-size="7" font-weight="700" fill="#fff" font-family="sans-serif">' + ['일', '월', '화', '수', '목', '금', '토'][d.getDay()] + '요일</text><text x="24" y="37.5" text-anchor="middle" font-size="21" font-weight="500" fill="#222" font-family="sans-serif">' + d.getDate() + '</text>'; },
+    '동영상': function () { return bg('#ff4a3d', '#d4140a') + '<path d="M19.5 14.6c0-1.6 1.7-2.5 3-1.7l11.7 7.6c1.3.8 1.3 2.6 0 3.4l-11.7 7.6c-1.3.8-3-.1-3-1.7z" fill="#fff" transform="translate(-1 3.2)"/>'; },
+    '설정': function () { return bg('#9aa4b5', '#5c667a') + '<g transform="translate(9 9) scale(1.25)"><path d="' + GEAR + '" fill="#fff"/></g>'; }
+  };
+  function icon(name) { return '<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">' + DRAW[name]() + '</svg>'; }
+  document.querySelectorAll('[data-app]').forEach(function (el) { el.innerHTML = icon(el.dataset.app); });
   function track(name, p) { try { if (window.dataLayer) (function () { window.dataLayer.push(arguments); })('event', name, p || {}); } catch (e) {} }
 
   // 상단 시계·날짜
@@ -30,7 +49,7 @@
 
   var icons = APPS.map(function (a) {
     var el = document.createElement('div'); el.className = 'ri';
-    el.innerHTML = '<i style="background:' + a[2] + '">' + a[1] + '</i>';
+    el.innerHTML = '<i>' + icon(a[0]) + '</i>';
     ring.appendChild(el); return el;
   });
 
@@ -64,7 +83,7 @@
     var el = icons[i], a = APPS[i];
     launch.style.setProperty('--lx', el.style.left); launch.style.setProperty('--ly', el.style.top);
     launch.style.background = a[2];
-    launch.querySelector('.launch-icon').textContent = a[1];
+    launch.querySelector('.launch-icon').innerHTML = icon(a[0]);
     launch.querySelector('b').textContent = a[0];
     launch.classList.add('open');
     clearTimeout(launchT);
@@ -144,7 +163,7 @@
   var dirs = document.querySelector('.dirs');
   if (dirs) {
     var di = Array.prototype.slice.call(dirs.querySelectorAll('i')), db = dirs.querySelector('b');
-    di.forEach(function (el, k) { var v = vec(k); el.style.left = 115 + v[0] * 86 + 'px'; el.style.top = 115 + v[1] * 86 + 'px'; el.style.background = APPS[k][2]; el.textContent = APPS[k][1]; });
+    di.forEach(function (el, k) { var v = vec(k); el.style.left = 115 + v[0] * 86 + 'px'; el.style.top = 115 + v[1] * 86 + 'px'; el.innerHTML = icon(APPS[k][0]); });
     var dk = 0;
     if (!REDUCE) setInterval(function () {
       var k = [0, 3, 5, 2, 7, 4][dk++ % 6], v = vec(k);
