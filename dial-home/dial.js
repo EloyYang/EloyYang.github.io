@@ -75,7 +75,7 @@
     selected = i;
     icons.forEach(function (el, k) { el.classList.toggle('sel', k === i); });
     ring.classList.toggle('picking', i >= 0);
-    if (i >= 0 && navigator.vibrate) { try { navigator.vibrate(8); } catch (e) {} }
+    if (i >= 0 && !ghostRunning && navigator.vibrate) { try { navigator.vibrate(8); } catch (e) {} }
   }
   function hideRing() { ring.classList.remove('show', 'picking'); icons.forEach(function (el) { el.classList.remove('sel'); }); finger.classList.remove('on'); }
   function openApp(i) {
