@@ -32,15 +32,14 @@ section h2 { font-size: 14px; letter-spacing: .08em; color: var(--muted); font-w
 .card-link { position: absolute; inset: 0; border-radius: inherit; z-index: 0; }
 .card .links a, .card .card-head, .card p, .card ul { position: relative; }
 .card .links { z-index: 1; position: relative; }
-.card-icon { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 22px; background: color-mix(in srgb, var(--c) 14%, transparent); color: var(--c); font-weight: 900; margin-bottom: 16px; flex: none; }
+.card-icon { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-size: 16px; background: color-mix(in srgb, var(--c) 14%, transparent); color: var(--c); font-weight: 900; flex: none; }
 .card-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .card h3 { margin: 0; font-size: 20px; letter-spacing: -.02em; }
 .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; }
 .card p { color: var(--muted); margin: 10px 0 18px; }
 .card .links { margin-top: auto; }
 
-.feature { flex-direction: row; gap: 22px; padding: 30px; }
-.feature .card-icon { width: 58px; height: 58px; font-size: 28px; }
+.feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 28px; padding: 28px; align-items: center; }
 .feature h3 { font-size: 24px; }
 .points { margin: 0 0 22px; padding-left: 18px; color: var(--ink); }
 .points li { margin: 3px 0; }
@@ -64,7 +63,51 @@ section h2 { font-size: 14px; letter-spacing: .08em; color: var(--muted); font-w
 
 @media (max-width: 720px) {
   .top nav { gap: 14px; }
+  .feature .pv { order: -1; }
   .hero { padding: 44px 0 36px; }
-  .feature { flex-direction: column; gap: 0; padding: 24px; }
+  .feature { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
   .about-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ── 화면 미리보기 ── */
+.pv { position: relative; z-index: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #ece9e1; margin-bottom: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.feature .pv { margin-bottom: 0; }
+.pv-dark { background: #1b1b1f; }
+.pv-bar { display: flex; align-items: center; gap: 5px; height: 26px; padding: 0 10px; background: color-mix(in srgb, var(--ink) 6%, var(--card)); border-bottom: 1px solid var(--line); }
+.pv-bar i { width: 8px; height: 8px; border-radius: 50%; background: color-mix(in srgb, var(--ink) 18%, transparent); }
+.pv-bar span { margin-left: 8px; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pv-screen { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+.pv-screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity .6s ease; transform: scale(1.0); }
+.pv-screen img.on { opacity: 1; animation: pvzoom 3.2s ease-out both; }
+@keyframes pvzoom { from { transform: scale(1.035); } to { transform: scale(1); } }
+.pv-foot { display: flex; gap: 8px; align-items: center; padding: 8px 12px; font-size: 13px; background: var(--card); border-top: 1px solid var(--line); min-height: 36px; }
+.pv-step { font-size: 11px; font-weight: 700; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; flex: none; }
+.pv-cap { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pv-zoom img { scale: 1.75; transform-origin: 84% 42%; }
+.pv-prog { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; }
+.pv-prog i { display: block; height: 100%; width: 0; background: var(--accent); }
+.card p { margin-top: 8px; }
+
+/* 다이얼 홈 동작 그림 (5초 반복) */
+.pv-dial svg { display: block; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, #26303a, #141418); }
+.pv-dial svg * { transform-box: view-box; }
+.pv-dial .d-finger, .pv-dial .d-trail, .pv-dial .d-apps, .pv-dial .d-target, .pv-dial .d-open, .pv-dial .d-ring { animation-duration: 5s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+.pv-dial.paused * { animation-play-state: paused !important; }
+.d-finger { animation-name: dFinger; }
+.d-trail  { animation-name: dTrail; }
+.d-apps   { animation-name: dApps; transform-origin: 160px 118px; }
+.d-target rect { animation: dTarget 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.d-open   { animation-name: dOpen; transform-origin: 194px 118px; }
+.d-ring   { animation-name: dRing; transform-origin: 160px 118px; }
+@keyframes dFinger { 0%,8% { opacity: 0; transform: translate(0,0); } 14%,30% { opacity: 1; transform: translate(0,0); } 52%,66% { opacity: 1; transform: translate(34px,0); } 72%,100% { opacity: 0; transform: translate(34px,0); } }
+@keyframes dTrail  { 0%,30% { opacity: 0; stroke-dasharray: 0 40; } 52%,66% { opacity: 1; stroke-dasharray: 34 40; } 72%,100% { opacity: 0; stroke-dasharray: 34 40; } }
+@keyframes dApps   { 0%,16% { opacity: 0; transform: scale(.55); } 28%,66% { opacity: 1; transform: scale(1); } 74%,100% { opacity: 0; transform: scale(1); } }
+@keyframes dTarget { 0%,46% { transform: scale(1); stroke: none; } 54%,68% { transform: scale(1.35); stroke: #fff; stroke-width: 1.5px; } 74%,100% { transform: scale(1); stroke: none; } }
+@keyframes dOpen   { 0%,66% { opacity: 0; transform: scale(.08); } 78%,92% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1); } }
+@keyframes dRing   { 0%,10% { stroke-opacity: .45; transform: scale(1); } 16% { transform: scale(1.25); } 22%,100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .pv-screen img.on { animation: none; }
+  .pv-dial * { animation: none !important; }
+  .pv-dial .d-apps, .pv-dial .d-finger { opacity: 1; }
+  .pv-dial .d-open, .pv-dial .d-trail { opacity: 0; }
 }
