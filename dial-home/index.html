@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>다이얼 홈 — 아이콘 없는 홈 화면, 다이얼로 여는 앱</title>
+  <meta name="description" content="다이얼 홈은 배경화면만 보이는 깔끔한 안드로이드 홈 화면 런처입니다. 보이지 않는 다이얼을 누르고 8방향 중 한쪽으로 끌면 그 방향의 앱이 실행됩니다. 무료, 개인정보 수집 없음.">
+  <link rel="canonical" href="https://eloylab.it/dial-home/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eloy Lab">
+  <meta property="og:title" content="다이얼 홈 — 아이콘 없는 홈 화면, 다이얼로 여는 앱">
+  <meta property="og:description" content="보이지 않는 다이얼을 누르고 끌면 그 방향의 앱이 열리는 안드로이드 런처">
+  <meta property="og:url" content="https://eloylab.it/dial-home/">
+  <meta property="og:image" content="https://eloylab.it/dial-home/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#101114">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dial.css?v=1">
+  <script src="../analytics.js" defer></script>
+  <script src="dial.js?v=2" defer></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./"><img src="icon.svg" alt="" width="30" height="30">다이얼 홈</a>
+    <nav>
+      <a href="#features">기능</a>
+      <a href="#install">설치</a>
+      <a href="../">Eloy Lab</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Android 홈 화면 런처 · 무료</p>
+        <h1>아이콘 없는 홈 화면,<br><span>다이얼</span>로 여는 앱</h1>
+        <p class="lead">홈 화면에는 배경화면만 둡니다. 보이지 않는 다이얼을 누르고 원하는 방향으로 살짝 끌면, 그 방향에 지정한 앱이 바로 열립니다.</p>
+        <div class="ctas">
+          <a class="btn" href="https://github.com/EloyYang/dial-home/releases/latest/download/DialHome.apk" data-track="apk_download">APK 내려받기</a>
+          <a class="btn ghost" href="https://github.com/EloyYang/dial-home" rel="noopener">GitHub</a>
+        </div>
+        <p class="note">Android 8.0 이상 · 버전 1.1.2 · 광고 없음 · 개인정보 수집 없음</p>
+      </div>
+
+      <div class="hero-demo">
+        <div class="phone" id="phone">
+          <div class="screen" id="screen">
+            <div class="status"><span id="clock">10:24</span><span class="sys">▾ ◢ ▮</span></div>
+            <div class="date" id="date"></div>
+            <div class="dial-marker ring" id="marker" data-x="0.5" data-y="0.66"></div>
+            <div class="ring-icons" id="ring" aria-hidden="true"></div>
+            <div class="finger" id="finger"></div>
+            <div class="launch" id="launch"><div class="launch-icon"></div><b></b><small>실행됨</small></div>
+            <div class="swipe-hint">위로 쓸어 올리면 검색</div>
+          </div>
+        </div>
+        <p class="try" id="try">👆 다이얼을 <b>누른 채로</b> 원하는 방향으로 끌었다 놓아 보세요</p>
+        <div class="shapes" role="radiogroup" aria-label="다이얼 표시 모양">
+          <span>표시 모양</span>
+          <button data-shape="none">투명</button>
+          <button data-shape="circle">원</button>
+          <button data-shape="ring" class="on">링</button>
+          <button data-shape="square">사각</button>
+          <button data-shape="dot">점</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <article class="feat">
+        <div class="feat-art art-dirs" aria-hidden="true">
+          <div class="dirs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></div>
+        </div>
+        <div class="feat-copy">
+          <h2>8방향, 다이얼 하나에 앱 8개</h2>
+          <p>다이얼을 누르면 지정한 앱 아이콘이 손가락 주위에 펼쳐지고, 끄는 방향의 아이콘이 커지며 빛납니다. 손을 떼면 실행. 방향은 손가락을 댄 자리에서부터 재기 때문에 다이얼이 커도 조금만 끌면 됩니다.</p>
+          <ul>
+            <li>원하는 위치에 다이얼을 여러 개 놓을 수 있어요</li>
+            <li>크기와 표시 모양(투명 · 원 · 링 · 사각 · 점)을 고를 수 있어요</li>
+            <li>방향이 바뀔 때마다 짧은 진동으로 알려 줘요</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feat rev">
+        <div class="feat-art art-widgets" aria-hidden="true">
+          <div class="mini-phone">
+            <div class="w w-clock"><b>10:24</b><small>11월 17일 화요일</small></div>
+            <div class="w-stack"><div class="w-track"><div class="w w-weather">☀︎ <b>14°</b><small>맑음</small></div><div class="w w-cal">📅 <b>3시</b><small>팀 회의</small></div><div class="w w-music">♫ <b>재생 중</b><small>플레이리스트</small></div></div></div>
+            <div class="w-dots"><i class="on"></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="feat-copy">
+          <h2>필요한 위젯만, 원하는 자리에</h2>
+          <p>위젯은 자유롭게 놓거나 칸에 맞춰 놓을 수 있고, 칸 수는 직접 정합니다. 여러 위젯을 겹쳐 스택으로 만들면 좌우로 넘겨 봅니다.</p>
+          <ul>
+            <li>위젯 목록은 앱별로 묶여 있고 검색 · 미리보기를 지원해요</li>
+            <li>홈 화면을 여러 개 만들고 메인 화면을 고를 수 있어요</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feat">
+        <div class="feat-art art-search" aria-hidden="true">
+          <div class="mini-phone search">
+            <div class="s-box"><span class="s-typed"></span><i class="s-caret"></i></div>
+            <div class="s-list">
+              <div class="s-row fav"><i style="background:#f59e0b">📷</i>카메라<small>★</small></div>
+              <div class="s-row"><i style="background:#22c55e">💬</i>메시지</div>
+              <div class="s-row"><i style="background:#0ea5e9">☎</i>전화</div>
+              <div class="s-row"><i style="background:#64748b">⚙</i>설정 · 블루투스</div>
+              <div class="s-row"><i style="background:#ec4899">♫</i>음악</div>
+            </div>
+            <div class="s-index"><span>ㄱ</span><span>ㄴ</span><span>ㄷ</span><span>ㅁ</span><span>ㅂ</span><span>ㅅ</span><span>ㅇ</span><span>ㅈ</span><span>ㅋ</span><span>ㅎ</span></div>
+          </div>
+        </div>
+        <div class="feat-copy">
+          <h2>위로 쓸어 올리면 검색</h2>
+          <p>다이얼에 없는 앱은 홈 화면을 위로 쓸어 올려 바로 찾습니다. 앱뿐 아니라 설정 화면도 검색돼요.</p>
+          <ul>
+            <li>즐겨찾기와 자주 찾는 항목이 맨 위에</li>
+            <li>오른쪽 초성 · 알파벳 인덱스를 끌어 빠르게 이동</li>
+            <li>앱에 별명을 붙여 그 이름으로도 찾을 수 있어요</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="more">
+        <div class="tile"><b>⇣ 아래로 쓸면 알림</b><p>홈 화면을 아래로 쓸어내려 알림 패널을 엽니다.</p></div>
+        <div class="tile"><b>🔒 편집 잠금</b><p>길게 눌러도 편집 화면이 열리지 않게 잠가 둘 수 있어요.</p></div>
+        <div class="tile"><b>⤓ 앱 안에서 업데이트</b><p>새 버전이 나오면 앱 안에서 내려받아 설치합니다.</p></div>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <h2>개인정보를 모으지 않습니다</h2>
+      <p>광고나 분석 도구가 없습니다. 설치된 앱 목록과 홈 화면 구성은 기기 안에서만 쓰고, 인터넷은 새 버전을 확인하고 내려받을 때만 씁니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 보세요.</p>
+    </section>
+
+    <section id="install" class="install">
+      <h2>설치하기</h2>
+      <ol>
+        <li><b>APK 내려받기</b><span>휴대폰에서 아래 버튼을 눌러 <code>DialHome.apk</code>를 받습니다.</span></li>
+        <li><b>설치 허용</b><span>처음이면 브라우저(또는 파일 앱)에 '출처를 알 수 없는 앱 설치'를 허용합니다.</span></li>
+        <li><b>기본 홈 앱으로</b><span>설치 후 홈 버튼을 누르고 <b>다이얼 홈</b>을 고르거나, 설정 › 애플리케이션 › 기본 앱 › 홈 앱에서 바꿉니다.</span></li>
+        <li><b>다이얼 놓기</b><span>홈 화면을 길게 눌러 편집을 열고, 다이얼을 놓은 뒤 눌러서 방향마다 앱을 지정합니다.</span></li>
+      </ol>
+      <div class="ctas">
+        <a class="btn" href="https://github.com/EloyYang/dial-home/releases/latest/download/DialHome.apk" data-track="apk_download">APK 내려받기 (약 6MB)</a>
+        <a class="btn ghost" href="https://github.com/EloyYang/dial-home/releases" rel="noopener">모든 버전</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>다이얼 홈 · <a href="../">Eloy Lab</a></span>
+    <span><a href="privacy.html">개인정보처리방침</a> · <a href="mailto:didehddud23@naver.com">문의</a></span>
+  </footer>
+</body>
+</html>

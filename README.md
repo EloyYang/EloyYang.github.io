@@ -9,6 +9,7 @@ eloy의 개인 포트폴리오 겸 서비스 포털. GitHub 사용자 사이트(
 | `/buni/` | `EloyYang/buni` (docs 폴더) |
 | `/pocket-arena/` | `EloyYang/pocket-arena` |
 | `/money-connection/` | `EloyYang/money-connection` |
+| `/dial-home/` | 이 저장소의 `dial-home/` 폴더 (앱 저장소 `EloyYang/dial-home` 은 Pages를 켜지 않는다 — 켜면 이 폴더와 주소가 겹친다) |
 
 - 새 프로젝트 추가: 그 저장소에서 Pages를 켜고(`CNAME`은 두지 않는다) `index.html`에 카드를 하나 더 넣고 `sitemap.xml`에 주소를 추가.
 - `gtelp.html` 등 루트의 짧은 HTML은 예전 시험 사이트 주소를 `/exam/`으로 넘기는 이동 페이지. `404.html`도 예전 `/css`, `/js`, `/fire/` 경로를 `/exam/`으로 보낸다.
