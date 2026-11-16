@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eloy Lab — 직접 만들어 운영하는 서비스 모음</title>
+  <meta name="description" content="eloy가 만들고 운영하는 서비스 모음. 시험 준비 노트, Claude Code 마스코트 앱 부니, 폰으로 노는 게임 광장 Pocket Arena, 자산 상관관계 지도 머니 커넥션.">
+  <link rel="canonical" href="https://eloylab.it/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eloy Lab">
+  <meta property="og:title" content="Eloy Lab — 직접 만들어 운영하는 서비스 모음">
+  <meta property="og:description" content="시험 준비 노트 · 부니 · Pocket Arena · 머니 커넥션">
+  <meta property="og:url" content="https://eloylab.it/">
+  <meta property="og:image" content="https://eloylab.it/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+  <meta name="naver-site-verification" content="a0379e210976eae87224e8c79e6c440d7ec96041" />
+  <meta name="google-adsense-account" content="ca-pub-3209887784875053">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // 예전 시험 사이트 주소(eloylab.it/#goryeo1 처럼 시대 id)는 한국사 지도 노트로 보낸다
+    if (/^#[a-z][a-z0-9]+$/.test(location.hash) && !/^#(projects|about|contact)$/.test(location.hash))
+      location.replace('exam/history.html' + location.hash);
+  </script>
+  <script src="analytics.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Eloy Lab","url":"https://eloylab.it/",
+   "author":{"@type":"Person","name":"eloy","url":"https://github.com/EloyYang"}}
+  </script>
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="./"><span class="logo-mark">e</span>Eloy Lab</a>
+    <nav>
+      <a href="#projects">프로젝트</a>
+      <a href="#about">소개</a>
+      <a href="#contact">연락</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">eloy의 작업실</p>
+      <h1>필요해서 만들고,<br>쓰는 사람이 생기면 계속 고칩니다.</h1>
+      <p class="lead">공부할 때 불편했던 것, 매일 쓰는 도구에 아쉬웠던 것을 직접 만들어 운영하는 곳입니다. 모두 설치나 가입 없이 바로 써 볼 수 있습니다.</p>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>프로젝트</h2>
+
+      <article class="card feature" data-project="exam">
+        <a class="card-link" href="exam/" aria-label="시험 준비 노트 열기"></a>
+        <div class="card-icon" style="--c:#2f6f4f">✓</div>
+        <div class="card-body">
+          <div class="card-head">
+            <h3>시험 준비 노트</h3>
+            <span class="tag">웹 · 운영 중</span>
+          </div>
+          <p>한국사능력검정시험, 지텔프 Level 2, 소방공무원 필기를 기출 풀기 · 자동 오답 노트 · 개념 정리로 준비하는 사이트.</p>
+          <ul class="points">
+            <li>한능검 심화 70~80회 기출, 시대별 영토 지도, 유물 타자 암기</li>
+            <li>지텔프 90분 모의고사 10회, 문법 130문항, 원어민 음성 청취</li>
+            <li>소방 공채·경채 2022~2026 기출 + 관련 법령·판례</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="exam/">사이트 열기</a>
+            <a class="sub" href="exam/gtelp.html">지텔프</a>
+            <a class="sub" href="exam/fire.html?kind=open">소방</a>
+            <a class="sub" href="exam/quiz.html">한국사</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="grid">
+        <article class="card" data-project="buni">
+          <a class="card-link" href="buni/" aria-label="부니 열기"></a>
+          <div class="card-icon" style="--c:#d9779b">🐰</div>
+          <div class="card-head">
+            <h3>부니 Buni</h3>
+            <span class="tag">macOS · Windows</span>
+          </div>
+          <p>Claude Code가 일하는 동안 화면 위에 떠 있는 픽셀아트 토끼. 생각 중·도구 사용·권한 요청·완료를 표정으로 알려 줘서, 딴짓하다가도 끝난 걸 바로 압니다.</p>
+          <div class="links">
+            <a class="btn" href="buni/">소개 페이지</a>
+            <a class="sub" href="https://github.com/EloyYang/buni" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" data-project="pocket-arena">
+          <a class="card-link" href="pocket-arena/" aria-label="Pocket Arena 열기"></a>
+          <div class="card-icon" style="--c:#5b5bd6">🎮</div>
+          <div class="card-head">
+            <h3>Pocket Arena</h3>
+            <span class="tag">웹 게임</span>
+          </div>
+          <p>휴대폰이 컨트롤러가 되는 게임과, 링크 하나로 친구와 두는 체스·바둑·오목. 서버 없이 기기끼리 바로 연결됩니다.</p>
+          <div class="links">
+            <a class="btn" href="pocket-arena/">플레이</a>
+            <a class="sub" href="https://github.com/EloyYang/pocket-arena" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" data-project="money-connection">
+          <a class="card-link" href="money-connection/" aria-label="머니 커넥션 열기"></a>
+          <div class="card-icon" style="--c:#c98a1b">🕸</div>
+          <div class="card-head">
+            <h3>머니 커넥션</h3>
+            <span class="tag">데이터 시각화</span>
+          </div>
+          <p>나스닥100·코스피100·미국 ETF·비트코인·금이 서로 어떻게 함께 움직이는지 보여 주는 상관관계 지도. 테마 로테이션과 계절성까지, 매일 자동 갱신.</p>
+          <div class="links">
+            <a class="btn" href="money-connection/">지도 보기</a>
+            <a class="sub" href="https://github.com/EloyYang/money-connection" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" data-project="dial-home">
+          <a class="card-link" href="https://github.com/EloyYang/dial-home" rel="noopener" aria-label="다이얼 홈 GitHub 열기"></a>
+          <div class="card-icon" style="--c:#3b82a0">☎</div>
+          <div class="card-head">
+            <h3>다이얼 홈</h3>
+            <span class="tag">Android</span>
+          </div>
+          <p>다이얼을 돌려 앱을 고르고 실행하는 안드로이드 홈 런처.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/EloyYang/dial-home" rel="noopener">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>소개</h2>
+      <div class="about-grid">
+        <p>안녕하세요, <b>eloy</b>입니다. 기획부터 디자인, 개발, 배포, 운영까지 혼자 맡아 작은 서비스를 만듭니다. 실제 사용자가 쓰는 화면을 만들고, 이용 기록을 보며 고치는 과정을 좋아합니다.</p>
+        <dl class="stack">
+          <div><dt>웹</dt><dd>HTML · CSS · JavaScript, Firebase, WebRTC</dd></div>
+          <div><dt>앱</dt><dd>Swift(macOS), Kotlin(Android)</dd></div>
+          <div><dt>데이터</dt><dd>Python, 시장 데이터 수집·분석, GA4</dd></div>
+          <div><dt>운영</dt><dd>GitHub Pages · Actions, 검색 등록, 애드센스</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>연락</h2>
+      <p>제안이나 오류 제보, 협업 문의는 메일로 보내 주세요.</p>
+      <div class="links">
+        <a class="btn" href="mailto:didehddud23@naver.com">didehddud23@naver.com</a>
+        <a class="sub" href="https://github.com/EloyYang" rel="noopener">GitHub @EloyYang</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Eloy Lab</span>
+    <a href="exam/privacy.html">개인정보처리방침</a>
+  </footer>
+</body>
+</html>
