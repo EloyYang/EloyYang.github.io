@@ -280,3 +280,9 @@ section h2 { font-size: 14px; letter-spacing: .08em; color: var(--muted); font-w
 .mn-hint { position: absolute; left: 50%; top: 62%; transform: translateX(-50%); color: #6b7686; transition: opacity .4s; white-space: nowrap; } .mn-hint.hide { opacity: 0; }
 .mn-tip { position: absolute; transform: translate(-50%, -260%); background: #fff; color: #111; font-weight: 700; padding: .6cqw 1.4cqw; border-radius: 99px; white-space: nowrap; opacity: 0; transition: opacity .3s, left .6s, top .6s; pointer-events: none; }
 .mn-tip.show { opacity: 1; }
+
+/* Rappo 카드 미리보기 */
+.pv-rappo svg { display: block; width: 100%; height: 100%; }
+.pv-rappo .r-row { animation: rIn 4.5s ease-in-out infinite; animation-delay: var(--d); }
+@keyframes rIn { 0%, 8% { opacity: 0; transform: translateY(6px); } 18%, 88% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .pv-rappo .r-row { animation: none; } }

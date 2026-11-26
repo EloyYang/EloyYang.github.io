@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Eloy Lab — 직접 만들어 운영하는 서비스 모음</title>
-  <meta name="description" content="eloy가 만들고 운영하는 서비스 모음. 시험 준비 노트, Claude Code 마스코트 앱 부니, 폰으로 노는 게임 광장 Pocket Arena, 자산 상관관계 지도 머니 커넥션.">
+  <meta name="description" content="eloy가 만들고 운영하는 서비스 모음. 시험 준비 노트, Claude Code 마스코트 앱 부니, 폰으로 노는 게임 광장 Pocket Arena, 자산 상관관계 지도 머니 커넥션, 통화·카톡 정리 앱 라포.">
   <link rel="canonical" href="https://eloylab.it/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Eloy Lab">
@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <script>
     // 예전 시험 사이트 주소(eloylab.it/#goryeo1 처럼 시대 id)는 한국사 지도 노트로 보낸다
     if (/^#[a-z][a-z0-9]+$/.test(location.hash) && !/^#(projects|about|contact)$/.test(location.hash))
@@ -137,6 +137,43 @@
           <div class="links">
             <a class="btn" href="money-connection/">지도 보기</a>
             <a class="sub" href="https://github.com/EloyYang/money-connection" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" data-project="rappo">
+          <a class="card-link" href="rappo/" aria-label="Rappo 소개 페이지 열기"></a>
+          <div class="pv pv-rappo" aria-label="Rappo 최근 연락 화면 예시 그림">
+            <div class="pv-bar"><i></i><i></i><i></i><span>Obsidian · 통화기록 대시보드</span></div>
+            <div class="pv-screen">
+              <svg viewBox="0 0 320 200" role="img" aria-label="카톡과 통화를 합쳐 최근에 연락한 사람 순서로 보여 주는 목록">
+                <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9a5c"/><stop offset=".55" stop-color="#f2557a"/><stop offset="1" stop-color="#7b4fd8"/></linearGradient></defs>
+                <rect width="320" height="200" fill="#fff7f4"/>
+                <text x="18" y="26" font-size="12" font-weight="800" fill="#221a22">🕘 최근 연락</text>
+                <g font-size="10" fill="#221a22">
+                  <g class="r-row" style="--d:0s"><text x="18" y="50" font-weight="700">홍길동</text><text x="302" y="50" text-anchor="end" fill="#8a7e8c">오늘 14:07</text>
+                    <rect x="18" y="56" width="98" height="13" rx="6.5" fill="url(#rg)"/><text x="24" y="65.5" font-size="8" fill="#fff">📞 오늘 14:07 · 3분</text>
+                    <rect x="120" y="56" width="62" height="13" rx="6.5" fill="#efe6ea"/><text x="126" y="65.5" font-size="8" fill="#8a7e8c">💬 어제 21:40</text></g>
+                  <line x1="18" x2="302" y1="80" y2="80" stroke="#f0dfe0"/>
+                  <g class="r-row" style="--d:.15s"><text x="18" y="98" font-weight="700">김영희</text><text x="302" y="98" text-anchor="end" fill="#8a7e8c">오늘 11:20</text>
+                    <rect x="18" y="104" width="64" height="13" rx="6.5" fill="url(#rg)"/><text x="24" y="113.5" font-size="8" fill="#fff">💬 오늘 11:20</text></g>
+                  <line x1="18" x2="302" y1="128" y2="128" stroke="#f0dfe0"/>
+                  <g class="r-row" style="--d:.3s"><text x="18" y="146" font-weight="700">이철수</text><text x="302" y="146" text-anchor="end" fill="#8a7e8c">11/24 16:31</text>
+                    <rect x="18" y="152" width="78" height="13" rx="6.5" fill="#efe6ea"/><text x="24" y="161.5" font-size="8" fill="#8a7e8c">📞 11/20 · 2건</text>
+                    <rect x="100" y="152" width="66" height="13" rx="6.5" fill="url(#rg)"/><text x="106" y="161.5" font-size="8" fill="#fff">💬 11/24 16:31</text></g>
+                </g>
+              </svg>
+            </div>
+            <div class="pv-foot"><span class="pv-cap">통화·카톡 구분 없이, 최근에 연락한 사람 순서로</span></div>
+          </div>
+          <div class="card-head">
+            <span class="card-icon" style="--c:#f2557a">💬</span>
+            <h3>라포 Rappo</h3>
+            <span class="tag">macOS · 옵시디언</span>
+          </div>
+          <p>통화 녹음과 카카오톡 대화를 맥 안에서 글로 바꿔 옵시디언에 사람별로 모아 주는 메뉴막대 앱. 최근 연락, 대화·통화 통합 검색까지.</p>
+          <div class="links">
+            <a class="btn" href="rappo/">소개 페이지</a>
+            <a class="sub" href="https://github.com/EloyYang/rappo" rel="noopener">GitHub</a>
           </div>
         </article>
 

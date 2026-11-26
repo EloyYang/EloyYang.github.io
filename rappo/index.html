@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rappo(라포) — 통화와 카톡을 사람별로, 옵시디언에 자동 정리</title>
+  <meta name="description" content="Rappo(라포)는 통화 녹음과 카카오톡 대화를 맥 안에서 글로 바꿔 옵시디언 볼트에 사람별로 모아 주는 무료 맥 앱입니다. 최근 연락, 대화·통화 통합 검색, 날짜별 보기를 한 화면에서.">
+  <link rel="canonical" href="https://eloylab.it/rappo/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eloy Lab">
+  <meta property="og:title" content="Rappo(라포) — 통화와 카톡을 사람별로, 옵시디언에 자동 정리">
+  <meta property="og:description" content="통화 녹음과 카카오톡 대화를 맥 안에서 정리해 옵시디언에 사람별로 모아 주는 메뉴막대 앱">
+  <meta property="og:url" content="https://eloylab.it/rappo/">
+  <meta property="og:image" content="https://eloylab.it/rappo/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#fff7f4">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rappo.css?v=1">
+  <script src="../analytics.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rappo","alternateName":"라포",
+   "operatingSystem":"macOS","applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},
+   "url":"https://eloylab.it/rappo/","downloadUrl":"https://github.com/EloyYang/rappo/releases/latest/download/Rappo.zip",
+   "author":{"@type":"Person","name":"eloy","url":"https://github.com/EloyYang"}}
+  </script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./"><img src="icon.svg" alt="" width="32" height="32">Rappo</a>
+    <nav>
+      <a href="#features">기능</a>
+      <a href="#install">설치</a>
+      <a href="../">Eloy Lab</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">macOS 메뉴막대 앱 · 무료 · 오픈소스</p>
+        <h1>통화와 카톡,<br><span>사람별로</span> 한눈에</h1>
+        <p class="lead">Rappo(라포)는 통화 녹음과 카카오톡 대화를 맥 안에서 글로 바꿔, 옵시디언에 사람별로 모아 줍니다.
+          누구와 언제 무슨 얘기를 했는지, 통화였는지 카톡이었는지 상관없이 바로 찾을 수 있어요.</p>
+        <div class="ctas">
+          <a class="btn" href="https://github.com/EloyYang/rappo/releases/latest/download/Rappo.zip" data-track="rappo_download">맥용 내려받기</a>
+          <a class="btn ghost" href="https://github.com/EloyYang/rappo" rel="noopener">GitHub</a>
+        </div>
+        <p class="req">Apple Silicon 맥 · 옵시디언 · 카카오톡 맥 앱</p>
+      </div>
+
+      <div class="mock" aria-label="옵시디언 대시보드의 최근 연락 예시">
+        <div class="mock-bar"><i></i><i></i><i></i><span>통화기록 대시보드 — Obsidian</span></div>
+        <div class="mock-body">
+          <div class="mock-title">🕘 최근 연락</div>
+          <div class="row"><b>홍길동</b><em>오늘 14:07</em>
+            <div class="chips"><span class="chip on">📞 오늘 14:07 · 3분 12초</span><span class="chip">💬 어제 21:40</span></div>
+            <p>요약: 다음 주 화요일 미팅 장소를 강남역으로 정함</p></div>
+          <div class="row"><b>김영희</b><em>오늘 11:20</em>
+            <div class="chips"><span class="chip on">💬 오늘 11:20</span></div>
+            <p>김영희: 자료 메일로 보냈어요! 확인 부탁드려요</p></div>
+          <div class="row"><b>👥 동네 친구들</b><em>어제 22:15</em>
+            <div class="chips"><span class="chip on">💬 어제 22:15</span></div>
+            <p>나: 토요일 7시 괜찮아</p></div>
+          <div class="row"><b>이철수</b><em>11/24 16:31</em>
+            <div class="chips"><span class="chip">📞 11/20 13:43 · 2건</span><span class="chip on">💬 11/24 16:31</span></div>
+            <p>이철수: 견적서 수정본 다시 드릴게요</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2>이런 걸 해요</h2>
+      <div class="grid">
+        <article><span class="ic">🎙</span><h3>통화 녹음을 글로</h3>
+          <p>녹음 파일이 폴더에 들어오면 자동으로 받아 적고, 나와 상대의 말을 구분해요. 원하면 한 줄 요약도 만들어요.</p></article>
+        <article><span class="ic">💬</span><h3>카카오톡 대화 정리</h3>
+          <p>카카오톡 맥 앱의 대화를 방별·월별 노트로 모아요. 새 대화가 오면 알아서 반영되고, 이름 없는 단체방은 참여자 이름으로 보여요.</p></article>
+        <article><span class="ic">🕘</span><h3>최근 연락 한눈에</h3>
+          <p>통화와 카톡을 구분 없이 합쳐, 가장 최근에 누구와 연락했는지 사람별로 보여 줘요.</p></article>
+        <article><span class="ic">🔍</span><h3>대화·통화 통합 검색</h3>
+          <p>월이 달라도 한 번에 찾아요. 사람을 고르면 1:1 대화, 통화, 단체방에서 한 말까지 함께 보이고, 날짜별로도 펼쳐 볼 수 있어요.</p></article>
+        <article><span class="ic">📇</span><h3>연락처 자동 정리</h3>
+          <p>같은 번호는 가장 최근 녹음 파일의 이름으로 맞추고, 이름이 없으면 ‘정보 없음’으로 표시해요.</p></article>
+        <article><span class="ic">🔒</span><h3>내 맥 안에서만</h3>
+          <p>음성 인식과 대화 정리는 모두 내 맥에서 이뤄지고, 결과는 내 옵시디언 볼트에만 저장돼요. 서버로 보내지 않아요.</p></article>
+      </div>
+    </section>
+
+    <section class="flow" aria-label="동작 흐름">
+      <div class="step"><span>📱</span><b>통화 녹음 · 카카오톡</b><small>폰 녹음 파일 폴더, 카톡 맥 앱</small></div>
+      <div class="arrow">→</div>
+      <div class="step brand"><img src="icon.svg" alt="" width="40" height="40"><b>Rappo</b><small>받아 적기 · 화자 구분 · 사람별 정리</small></div>
+      <div class="arrow">→</div>
+      <div class="step"><span>🗂</span><b>옵시디언</b><small>대시보드 · 검색 · 연락처 노트</small></div>
+    </section>
+
+    <section id="install" class="install">
+      <h2>설치</h2>
+      <ol>
+        <li><a href="https://github.com/EloyYang/rappo/releases/latest/download/Rappo.zip" data-track="rappo_download">Rappo.zip</a> 을 내려받아 압축을 풀고, <code>Rappo</code> 폴더를 <code>문서</code> 폴더 같은 곳에 둬요.</li>
+        <li>터미널을 열고 아래 한 줄을 붙여 넣어요.
+          <pre><code>bash ~/Documents/Rappo/install.sh</code></pre>
+          녹음 폴더를 묻고, 옵시디언 볼트를 찾아 <b>대시보드와 검색 기능을 자동으로 넣어</b> 줘요. 메뉴막대에 Rappo 아이콘이 생기면 끝.</li>
+        <li>처음 한 번: 시스템 설정 → 개인정보 보호 및 보안 → <b>전체 디스크 접근 권한</b>에 Rappo 추가 (카톡 대화를 읽는 데 필요해요).</li>
+        <li>옵시디언을 열고 플러그인 사용을 허용한 뒤 <b>통화기록 대시보드</b> 노트를 열어요.</li>
+      </ol>
+      <p class="note">필요한 것: Apple Silicon(M1 이상) 맥, <a href="https://brew.sh" rel="noopener">Homebrew</a>, <a href="https://obsidian.md" rel="noopener">옵시디언</a> 1.9 이상, 카카오톡 맥 앱.
+        통화 요약은 선택 사항으로, <a href="https://claude.com/claude-code" rel="noopener">Claude Code</a>가 있을 때 만들어져요.</p>
+      <p class="note">녹음 파일 이름은 <code>이름_전화번호_YYYYMMDDHHMMSS.m4a</code> 형식을 읽어요 (예: <code>홍길동_01012345678_20261126143000.m4a</code>).</p>
+    </section>
+
+    <section class="privacy">
+      <h2>개인정보</h2>
+      <p>Rappo는 어떤 데이터도 수집하거나 서버로 보내지 않아요. 녹음과 대화는 내 맥에서만 읽고, 결과는 내 옵시디언 볼트에만 저장해요.
+        (통화 요약을 켜면 전사문이 Claude Code를 통해 Anthropic으로 전송돼요.)
+        통화 녹음과 대화 기록은 상대방의 개인정보이기도 하니, 관련 법과 상대방의 뜻을 존중해 사용해 주세요.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a href="../">Eloy Lab</a> · <a href="https://github.com/EloyYang/rappo" rel="noopener">GitHub</a> · <a href="https://github.com/EloyYang/rappo/releases" rel="noopener">업데이트 기록</a>
+  </footer>
+</body>
+</html>
