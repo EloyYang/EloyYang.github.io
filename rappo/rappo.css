@@ -1,6 +1,6 @@
 :root {
-  --bg: #f7f6fd; --card: #fff; --ink: #1c1a3a; --muted: #66637f; --line: #e4e2f5;
-  --c1: #F0997B; --c2: #a77fc6; --c3: #7F77DD;
+  --bg: #f6f4fe; --card: #fff; --ink: #1c1a3a; --muted: #66637f; --line: #e4e2f5;
+  --c1: #8F87E6; --c2: #6A61D0; --c3: #3C3489;
   --grad: linear-gradient(135deg, var(--c1), var(--c2) 55%, var(--c3));
 }
 @media (prefers-color-scheme: dark) {
