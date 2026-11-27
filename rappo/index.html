@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="rappo.css?v=5">
+  <link rel="stylesheet" href="rappo.css?v=6">
   <script src="../analytics.js" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rappo","alternateName":"라포",
@@ -51,22 +51,28 @@
         <p class="req">Apple Silicon 맥 · 옵시디언 · 카카오톡 맥 앱</p>
       </div>
 
-      <div class="mock" aria-label="옵시디언 대시보드의 최근 연락 예시">
+      <div class="mock" aria-label="옵시디언 연락 대시보드 예시">
         <div class="mock-bar"><i></i><i></i><i></i><span>통화기록 대시보드 — Obsidian</span></div>
         <div class="mock-body">
-          <div class="mock-title">🕘 최근 연락</div>
-          <div class="row"><b>홍길동</b><em>오늘 14:07</em>
-            <div class="chips"><span class="chip on">📞 오늘 14:07 · 3분 12초</span><span class="chip">💬 어제 21:40</span></div>
-            <p>요약: 다음 주 화요일 미팅 장소를 강남역으로 정함</p></div>
-          <div class="row"><b>김영희</b><em>오늘 11:20</em>
-            <div class="chips"><span class="chip on">💬 오늘 11:20</span></div>
-            <p>김영희: 자료 메일로 보냈어요! 확인 부탁드려요</p></div>
-          <div class="row"><b>👥 동네 친구들</b><em>어제 22:15</em>
-            <div class="chips"><span class="chip on">💬 어제 22:15</span></div>
-            <p>나: 토요일 7시 괜찮아</p></div>
-          <div class="row"><b>이철수</b><em>11/24 16:31</em>
-            <div class="chips"><span class="chip">📞 11/20 13:43 · 2건</span><span class="chip on">💬 11/24 16:31</span></div>
-            <p>이철수: 견적서 수정본 다시 드릴게요</p></div>
+          <div class="mk-head"><b>11월 27일 금요일</b><span class="mk-btn">＋ 할 일</span></div>
+          <div class="mk-kpis">
+            <div class="mk-kpi over"><b>3</b><span>남은 할 일</span><em>마감 지남 1</em></div>
+            <div class="mk-kpi todo"><b>2</b><span>7일 안 챙길 날</span><em>D-3 홍길동 생일</em></div>
+            <div class="mk-kpi doing"><b>1</b><span>다가오는 일정</span><em>12/1 강남역</em></div>
+            <div class="mk-kpi"><b>5</b><span>오늘 연락</span><em>📞 2 · 💬 3</em></div>
+          </div>
+          <div class="mk-cols">
+            <div class="mk-col"><div class="mk-title">✅ 할 일</div>
+              <div class="mk-row"><i class="p hi">높음</i><span>견적서 수정본 보내기</span><em class="late">1일 지남</em></div>
+              <div class="mk-row"><i class="p mid">보통</i><span>회의 자료 공유하기</span><em>D-2</em></div>
+              <div class="mk-row"><i class="p lo">낮음</i><span>예약 시간 다시 확인</span><em>D-6</em></div>
+            </div>
+            <div class="mk-col"><div class="mk-title">🎂 챙길 날 · 📅 일정</div>
+              <div class="mk-row"><em class="soon">D-3</em><span>🎂 홍길동 생일</span></div>
+              <div class="mk-row"><em>D-4</em><span>📅 김영희 · 강남역 7시</span></div>
+              <div class="mk-row"><em>D-71</em><span>🗓 설날 · 가족</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

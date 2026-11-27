@@ -116,3 +116,25 @@ li > code, p > code { background: #f3f1fa; padding: 1px 7px; border-radius: 6px;
   .install, .privacy { padding: 24px 20px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* 미리보기: 3.0 연락 대시보드 */
+.mk-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 14px; }
+.mk-btn { font-size: 11px; font-weight: 700; color: #3b3570; background: var(--grad); border-radius: 8px; padding: 3px 10px; }
+.mk-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 12px; }
+.mk-kpi { background: #f7f5ff; border-radius: 10px; padding: 7px 8px; border-left: 3px solid var(--line); min-width: 0; }
+.mk-kpi b { display: block; font-size: 18px; line-height: 1.1; }
+.mk-kpi span { display: block; font-size: 10.5px; font-weight: 700; margin-top: 2px; white-space: nowrap; }
+.mk-kpi em { display: block; font-style: normal; font-size: 9.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mk-kpi.over { border-left-color: #f4a3a3; } .mk-kpi.over b { color: #e06666; }
+.mk-kpi.todo { border-left-color: #f6cf86; } .mk-kpi.doing { border-left-color: #a9c4f5; }
+.mk-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.mk-col { background: #fcfbff; border: 1px solid var(--line); border-radius: 10px; padding: 7px 9px; min-width: 0; }
+.mk-title { font-size: 11.5px; font-weight: 800; margin-bottom: 4px; }
+.mk-row { display: flex; align-items: center; gap: 6px; font-size: 11px; padding: 4px 0; border-bottom: 1px dashed var(--line); min-width: 0; }
+.mk-row:last-child { border-bottom: 0; }
+.mk-row span { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mk-row em { font-style: normal; font-size: 9.5px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.mk-row em.late { color: #e06666; } .mk-row em.soon { color: #d99a2b; }
+.mk-row i.p { font-style: normal; font-size: 9px; font-weight: 700; border-radius: 6px; padding: 0 5px; white-space: nowrap; }
+.p.hi { background: #fde3e3; color: #d65c5c; } .p.mid { background: #fdf1d8; color: #c98a1c; } .p.lo { background: #f0eef8; color: var(--muted); }
+@media (max-width: 560px) { .mk-kpis { grid-template-columns: 1fr 1fr; } .mk-cols { grid-template-columns: 1fr; } }
