@@ -18,12 +18,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="rappo.css?v=6">
+  <link rel="stylesheet" href="rappo.css?v=7">
   <script src="../analytics.js" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rappo","alternateName":"라포",
    "operatingSystem":"macOS","applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},
-   "url":"https://eloylab.it/rappo/","downloadUrl":"https://github.com/EloyYang/rappo/releases/latest/download/Rappo.zip",
+   "url":"https://eloylab.it/rappo/","downloadUrl":"https://github.com/EloyYang/rappo/releases/latest/download/Rappo.dmg",
    "author":{"@type":"Person","name":"eloy","url":"https://github.com/EloyYang"}}
   </script>
 </head>
@@ -40,12 +40,12 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">macOS 메뉴막대 앱 · 무료 · 오픈소스 · 3.0</p>
+        <p class="eyebrow">macOS 메뉴막대 앱 · 무료 · 오픈소스 · 3.4</p>
         <h1>통화와 카톡,<br><span>사람별로</span> 한눈에</h1>
         <p class="lead">Rappo(라포)는 통화 녹음과 카카오톡 대화를 맥 안에서 글로 바꿔, 옵시디언에 사람별로 모아 줍니다.
           대화 속에서 <b>내가 하기로 한 일</b>과 <b>챙겨야 할 날</b>까지 찾아 알려 주고, 회의도 녹음하면 회의록으로 정리해요.</p>
         <div class="ctas">
-          <a class="btn" href="https://github.com/EloyYang/rappo/releases/latest/download/Rappo.zip" data-track="rappo_download">맥용 내려받기</a>
+          <a class="btn" href="https://github.com/EloyYang/rappo/releases/latest/download/Rappo.dmg" data-track="rappo_download">맥용 내려받기 (.dmg)</a>
           <a class="btn ghost" href="https://github.com/EloyYang/rappo" rel="noopener">GitHub</a>
         </div>
         <p class="req">Apple Silicon 맥 · 옵시디언 · 카카오톡 맥 앱</p>
@@ -111,19 +111,71 @@
 
     <section id="install" class="install">
       <h2>설치</h2>
-      <ol>
-        <li><a href="https://github.com/EloyYang/rappo/releases/latest/download/Rappo.zip" data-track="rappo_download">Rappo.zip</a> 을 내려받아 압축을 풀고, <code>Rappo</code> 폴더를 <code>문서</code> 폴더 같은 곳에 둬요.</li>
-        <li>터미널을 열고 아래 한 줄을 붙여 넣어요.
-          <pre><code>bash ~/Documents/Rappo/install.sh</code></pre>
-          녹음 폴더를 묻고, 옵시디언 볼트를 찾아 <b>대시보드와 검색 기능을 자동으로 넣어</b> 줘요. 메뉴막대에 Rappo 아이콘이 생기면 끝.
-          설치 중에 <b>로컬 AI(약 4GB)</b>를 함께 설치할지 물어봐요. 설치하면 요약·할 일·회의록을 맥 안에서 만들어요.</li>
-        <li>처음 한 번: 시스템 설정 → 개인정보 보호 및 보안 → <b>전체 디스크 접근 권한</b>에 Rappo 추가 (카톡 대화를 읽는 데 필요해요).</li>
-        <li>옵시디언을 열고 플러그인 사용을 허용한 뒤 <b>통화기록 대시보드</b> 노트를 열어요.</li>
-        <li>(선택) Rappo 설정 › 정리·AI·캘린더에서 <b>캘린더 접근을 허용</b>하고 넣을 캘린더를 골라요.</li>
-      </ol>
-      <p class="note">필요한 것: Apple Silicon(M1 이상) 맥, <a href="https://brew.sh" rel="noopener">Homebrew</a>, <a href="https://obsidian.md" rel="noopener">옵시디언</a> 1.9 이상, 카카오톡 맥 앱.
-        요약·할 일·회의록은 선택 사항으로, 로컬 AI(<a href="https://ollama.com" rel="noopener">Ollama</a>)나 <a href="https://claude.com/claude-code" rel="noopener">Claude Code</a>로 만들어요.</p>
-      <p class="note">녹음 파일 이름은 <code>이름_전화번호_YYYYMMDDHHMMSS.m4a</code> 형식을 읽어요 (예: <code>홍길동_01012345678_20261126143000.m4a</code>).</p>
+      <p class="inst-lead">터미널 없이, 네 번이면 끝나요.</p>
+      <div class="inst-steps">
+        <div class="inst">
+          <div class="inst-pic">
+            <div class="ip-win">
+              <div class="ip-bar"><i></i><i></i><i></i><span>Rappo</span></div>
+              <div class="ip-drag"><span class="ip-app"><img src="icon.svg" alt="" width="34" height="34"><small>Rappo</small></span>
+                <span class="ip-arrow">→</span><span class="ip-app"><b class="ip-folder">A</b><small>Applications</small></span></div>
+            </div>
+          </div>
+          <b class="inst-n">1</b><h3>끌어다 놓기</h3>
+          <p><a href="https://github.com/EloyYang/rappo/releases/latest/download/Rappo.dmg" data-track="rappo_download">Rappo.dmg</a> 를 열고 Rappo 를 Applications 로</p>
+        </div>
+        <div class="inst">
+          <div class="inst-pic">
+            <div class="ip-win">
+              <div class="ip-bar"><i></i><i></i><i></i><span>개인정보 보호 및 보안</span></div>
+              <div class="ip-pad"><div class="ip-line">"Rappo" 이(가) 차단되었습니다</div><span class="ip-btn on">그래도 열기</span></div>
+            </div>
+          </div>
+          <b class="inst-n">2</b><h3>처음 한 번 열기</h3>
+          <p>막히면 설정에서 <b>그래도 열기</b></p>
+        </div>
+        <div class="inst">
+          <div class="inst-pic">
+            <div class="ip-win">
+              <div class="ip-bar"><i></i><i></i><i></i><span>Rappo 설치</span></div>
+              <div class="ip-pad">
+                <div class="ip-radio on">이 맥에서 정리하기</div>
+                <div class="ip-radio">AI·보기만</div>
+                <div class="ip-row"><span class="ip-pill">🧠 Qwen3.5 9B</span><span class="ip-btn on">설치</span></div>
+              </div>
+            </div>
+          </div>
+          <b class="inst-n">3</b><h3>고르고 설치</h3>
+          <p>녹음 폴더 · 볼트 · AI 모델</p>
+        </div>
+        <div class="inst">
+          <div class="inst-pic">
+            <div class="ip-win">
+              <div class="ip-bar"><i></i><i></i><i></i><span>전체 디스크 접근 권한</span></div>
+              <div class="ip-pad"><div class="ip-row"><span class="ip-app sm"><img src="icon.svg" alt="" width="20" height="20">Rappo</span><span class="ip-toggle"></span></div>
+                <span class="ip-btn">라포 홈 열기</span></div>
+            </div>
+          </div>
+          <b class="inst-n">4</b><h3>권한 켜면 끝</h3>
+          <p>옵시디언에서 <b>라포 홈</b> 열기</p>
+        </div>
+      </div>
+
+      <div class="inst-two">
+        <span class="it-label">맥이 두 대라면</span>
+        <div class="it-mac"><b>🖥 맥 한 대</b><small>정리하기</small></div>
+        <div class="it-sync">⇄<small>같은 볼트</small></div>
+        <div class="it-mac"><b>💻 다른 맥</b><small>AI·보기만</small></div>
+        <span class="it-note">정리는 한 대에서만 — 할 일·일정이 겹치지 않아요</span>
+      </div>
+
+      <details class="inst-more">
+        <summary>필요한 것 · 터미널로 설치</summary>
+        <p class="note">Apple Silicon(M1 이상) 맥, <a href="https://obsidian.md" rel="noopener">옵시디언</a> 1.9 이상, 카카오톡 맥 앱.
+          <a href="https://brew.sh" rel="noopener">Homebrew</a> 가 없으면 설치 창에서 바로 설치할 수 있어요. AI 모델은 메모리에 맞게 골라 둬요 (8GB: 4B · 16GB 이상: 9B).</p>
+        <p class="note">터미널로 설치하려면 <a href="https://github.com/EloyYang/rappo/releases/latest/download/Rappo.zip" data-track="rappo_download_zip">Rappo.zip</a> 을 풀어 <code>bash install.sh</code></p>
+        <p class="note">녹음 파일 이름 형식: <code>홍길동_01012345678_20261126143000.m4a</code></p>
+      </details>
     </section>
 
     <section class="privacy">
